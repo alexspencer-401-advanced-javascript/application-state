@@ -5,7 +5,7 @@ import styles from './Timer.css';
 import { SET_TO_ZERO } from '../../actions/moodsActions';
 
 const Timer = ({ setRender }) => {
-  const [seconds, setSeconds] = useState(5);
+  const [seconds, setSeconds] = useState(30);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
