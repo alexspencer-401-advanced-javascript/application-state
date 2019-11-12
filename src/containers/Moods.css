@@ -1,0 +1,18 @@
+.Moods {
+  margin: 0 auto;
+  margin-top: 50px;
+  display: inline-block;
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+
+  button {
+    width: 300px;
+    height: 100px;
+    background-color: rgb(67, 217, 243);
+    font-size: 50px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 10px;
+  }
+}
