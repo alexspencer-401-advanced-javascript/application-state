@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import store from '../../../store';
+import store from '../../store';
 import styles from './Timer.css';
+import { SET_TO_ZERO } from '../../actions/moodsActions';
 
 const Timer = ({ setRender }) => {
   const [seconds, setSeconds] = useState(5);
@@ -13,7 +14,7 @@ const Timer = ({ setRender }) => {
         clearTimeout(timeout);
         setRender(false);
         store.dispatch({
-          type: 'SET_TO_ZERO',
+          type: SET_TO_ZERO,
           payload: 0
         });
       }
