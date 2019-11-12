@@ -1,20 +1,20 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-// const History = ({ gamePlayArray }) => {
-//   console.log(gamePlayArray);
+const History = ({ game }) => {
+  console.log(game);
 
-//   return (
-//     <div>
-//       <p>
-//         {gamePlayArray}
-//       </p>
-//     </div>
-//   );
-// };
+  return (
+    <div>
+      <p>
+        {game}
+      </p>
+    </div>
+  );
+};
 
-// History.propTypes = {
-//   gamePlayArray: PropTypes.array.isRequired
-// };
+History.propTypes = {
+  game: PropTypes.array.isRequired
+};
 
-// export default History;
+export default History;

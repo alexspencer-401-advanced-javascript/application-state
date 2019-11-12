@@ -41,7 +41,7 @@ const Moods = ({ count, face, actions, handleSelection, handleReset, handleSaveG
           <Controls actions={mappedActions} handleSelection={handleSelection} />
           <Face emoji={face} />
           <Timer setRender={setRender} />
-          {/* <History gamePlayArray={gamePlayArray} /> */}
+          {/* <History game={} /> */}
         </>
       ) : (
         console.log('Timer has not yet been initialized!')
