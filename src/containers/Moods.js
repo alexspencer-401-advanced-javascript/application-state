@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import Controls from '../components/controls/Controls';
-// import History from '../components/history/History';
+import History from '../components/history/History';
 import Face from '../components/face/Face';
 import PropTypes from 'prop-types';
 import Timer from '../components/timer/Timer';
@@ -16,7 +16,7 @@ const actions = [
   { name: STUDY, text: 'Study', stateName: 'studies' },
 ];
 
-const Moods = ({ count, face, actions, handleSelection, handleReset, handleSaveGame }) => {
+const Moods = ({ history, count, face, actions, handleSelection, handleReset, handleSaveGame }) => {
 
   const [render, setRender] = useState(false);
 
@@ -37,15 +37,15 @@ const Moods = ({ count, face, actions, handleSelection, handleReset, handleSaveG
       {render ? (
         <>
           <button onClick={handleReset}>Reset</button>
-          <button onClick={ () => handleSaveGame({ count, face })}>Save Game</button>
+          <button onClick={() => handleSaveGame({ count, face })}>Save Game</button>
           <Controls actions={mappedActions} handleSelection={handleSelection} />
           <Face emoji={face} />
           <Timer setRender={setRender} />
-          {/* <History game={} /> */}
         </>
       ) : (
         console.log('Timer has not yet been initialized!')
       )}
+      <History history={history} />
     </div>
   );
 };
@@ -58,7 +58,8 @@ const mapStateToProps = state => ({
     studies: getStudiesCount(state)
   },
   face: getFace(state),
-  actions
+  actions,
+  history: state.game
 });
 
 const mapDispatchToProps = dispatch => {
@@ -86,7 +87,8 @@ Moods.propTypes = {
   actions: PropTypes.array.isRequired,
   handleSelection: PropTypes.func.isRequired,
   handleReset: PropTypes.func.isRequired,
-  handleSaveGame: PropTypes.func.isRequired
+  handleSaveGame: PropTypes.func.isRequired,
+  history: PropTypes.array.isRequired
 };
 
 export default MoodsContainer;

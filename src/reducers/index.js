@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import moods from './moodsReducer';
-import gameplay from './gamePlayReducer';
+import game from './gamePlayReducer';
 
 export default combineReducers({
   moods,
-  gameplay
+  game
 });
